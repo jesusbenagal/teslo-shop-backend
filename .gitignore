@@ -1,6 +1,9 @@
 postgres/
 .env
 
+# Images
+/static
+
 # compiled output
 /dist
 /node_modules
