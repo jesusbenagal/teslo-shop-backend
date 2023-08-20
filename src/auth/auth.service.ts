@@ -44,13 +44,11 @@ export class AuthService {
       select: { email: true, password: true },
     });
 
-    if (!user) {
+    if (!user)
       throw new UnauthorizedException("Credentials are not valid (email)");
-    }
 
-    if (!bcrypt.compareSync(password, user.password)) {
+    if (!bcrypt.compareSync(password, user.password))
       throw new UnauthorizedException("Credentials are not valid (password)");
-    }
 
     return user;
     //TODO: Return User JWT
